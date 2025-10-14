@@ -1,0 +1,13 @@
+# Render Blueprint for automatic deployment
+services:
+  - type: web
+    name: ucuna-matata
+    env: docker
+    plan: free
+    healthCheckPath: /
+    envVars:
+      - key: FLASK_APP
+        value: app.py
+      - key: PYTHONUNBUFFERED
+        value: 1
+
